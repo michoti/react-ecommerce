@@ -1,9 +1,9 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Login from "./assets/frontend/auth/Login";
-import Register from "./assets/frontend/auth/Register";
 import Dashboard from "./components/admin/Dashboard";
 import Profile from "./components/admin/Profile";
+import Login from "./components/frontend/auth/Login";
+import Register from "./components/frontend/auth/Register";
 import MasterLayout from "./layouts/admin/MasterLayout";
 
 function App() {
