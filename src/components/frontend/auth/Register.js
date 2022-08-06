@@ -1,4 +1,4 @@
-import { Axios } from 'axios';
+import axios from 'axios';
 import React, { useState } from 'react'
 
 const Register = () => {
@@ -22,7 +22,12 @@ const Register = () => {
             password : regInput.password,
         };
 
-        Axios.post(`api`, data).then(res => console.log(res));
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`http://localhost:8000/api/register`, data)
+                 .then(res => {});
+        });
+
+        
     };
 
   return (

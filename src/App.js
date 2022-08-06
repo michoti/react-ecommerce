@@ -5,6 +5,9 @@ import Profile from "./components/admin/Profile";
 import Login from "./components/frontend/auth/Login";
 import Register from "./components/frontend/auth/Register";
 import MasterLayout from "./layouts/admin/MasterLayout";
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
