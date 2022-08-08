@@ -32,7 +32,7 @@ const Login = () => {
                 localStorage.setItem('auth_token', res.data.token);
                 localStorage.setItem('auth_name', res.data.username);
                 swal('success', res.data.message , 'success');
-                navigate('/');
+                navigate('/admin/dashboard');
 
             }
             else if (res.data.status === 401)
@@ -50,7 +50,9 @@ const Login = () => {
   return (
     <>
      <div className='offset-lg-3 col-lg-6 my-4'>
-            <h2>Login</h2>
+            <div className='my-5'>
+                <h3>Login</h3>
+            </div>
             <form onSubmit={loginSubmit}>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Email address</label>

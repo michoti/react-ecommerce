@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import swal from 'sweetalert';
 
 const Register = () => {
-    
+
     const navigate = useNavigate();
 
     const [regInput, setReg] = useState({
@@ -52,6 +52,9 @@ const Register = () => {
   return (
         <>
         <div className='offset-lg-3 col-lg-6 my-4'>
+            <div className='my-5'>
+                <h3>Register</h3>
+            </div>
             <form onSubmit={regSubmit}>
                 <div className="mb-3">
                     <label className="form-label">Name</label>
