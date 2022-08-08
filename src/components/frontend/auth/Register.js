@@ -1,8 +1,12 @@
 import axios from 'axios';
+import { useNavigate } from "react-router-dom"
 import React, { useState } from 'react';
 import swal from 'sweetalert';
 
 const Register = () => {
+    
+    const navigate = useNavigate();
+
     const [regInput, setReg] = useState({
         name:'',
         email:'',
@@ -32,6 +36,7 @@ const Register = () => {
                         localStorage.setItem('auth_token', res.data.token);
                         localStorage.setItem('auth_name', res.data.username);
                         swal('success', res.data.message , 'success');
+                        navigate('/login');
 
                     }
                     else

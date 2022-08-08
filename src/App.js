@@ -20,9 +20,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<MasterLayout />}>
-            <Route index path="/admin/dashboard" element={<Dashboard />} />
-            <Route path="/admin/profile" element={<Profile />} />
+          <Route path="/admin/dashboard" element={<MasterLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Routes>
       </Router>
