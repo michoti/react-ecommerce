@@ -20,7 +20,7 @@ const MasterLayout = () => {
                 <Sidebar />
                 <div id="layoutSidenav_content">
                     <main>
-                       { auth?.auth_user ? <Outlet /> : <Navigate to="/login" state={{ from: location }} replace />}
+                       { auth?.auth_name ? <Outlet /> : <Navigate to="/login" state={{ from: location }} replace />}
                     </main>
                     <Footer />
                 </div>

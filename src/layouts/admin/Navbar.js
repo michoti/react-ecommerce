@@ -13,8 +13,8 @@ const Navbar = () => {
         axios.post(`api/logout`).then(res => {
             if(res.data.status === 200)
             {
-                localStorage.removeItem('auth_token');
-                localStorage.removeItem('auth_name');
+                // localStorage.removeItem('auth_token');
+                // localStorage.removeItem('auth_name');
                 swal("Logged out", res.data.message, 'success');
                 navigate('/');
             }

@@ -1,15 +1,15 @@
 import axios from 'axios';
 import swal from 'sweetalert';
 import React, { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../Features/AppContext';
 
 const Login = () => {
 
-  const {setAuth} = useAuth(); 
+  const {auth, setAuth} = useAuth(); 
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || '/admin';
+  // const location = useLocation();
+  // const from = location.state?.from?.pathname || '/admin';
   const [loginInput, setLogin] = useState({email:'',password:'',error_list: []});
 
   const handleInput = (e) => {
@@ -28,9 +28,13 @@ const Login = () => {
         axios.post(`api/login`, data).then(res => {
           if(res.data.status === 200)
             {
-              setAuth({ auth_token: res?.data?.token, auth_name: res?.data?.username });
+              const auth_name = res?.data?.username;
+              const auth_token = res?.data?.token;
+              setAuth({ auth_token , auth_name });
               swal('success', res.data.message , 'success');
-              navigate(from, {replace: true});
+              //navigate(from, {replace: true});
+              navigate('/admin')
+              console.log(auth.auth_name)
             }
             else if (res.data.status === 401)
             {

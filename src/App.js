@@ -8,7 +8,7 @@ import MasterLayout from "./layouts/admin/MasterLayout";
 import { MainPageLayout } from "./layouts/frontend/MainPageLayout";
 import axios from "axios";
 import Home from "./pages/Home";
-import RequireAuth from "./components/frontend/auth/RequireAuth";
+// import RequireAuth from "./components/frontend/auth/RequireAuth";
 
 axios.defaults.baseURL = "http://localhost:8000/";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
